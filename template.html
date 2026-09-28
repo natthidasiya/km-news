@@ -193,6 +193,47 @@ footer .q{margin-top:6px;font:600 24px Caveat,cursive;letter-spacing:0;color:#2c
 .v3 .more{border:0;background:transparent;color:var(--c);font:600 13.5px Prompt,sans-serif;padding:0;cursor:pointer}
 .dimg{width:100%;max-height:240px;object-fit:cover;border-radius:12px;display:block}
 @media (max-width:860px){.panel,.panel[data-p=HACK]{height:auto}.card.v3{grid-template-columns:1fr}.v3 .L{border-right:0}.v3 .media{flex:none;height:180px}.v3 .ktb{max-height:none}.v3 .smb{flex:none}.v3 .smb .sum{--clamp:4!important}}
+
+/* ===== v4 left: แถบสีเต็มความสูง ไอคอน+ตัวเลข+หัวข้อ ===== */
+.v3 .L.band{position:relative;border-right:0;color:#fff;background:linear-gradient(160deg,var(--gA),var(--gB));isolation:isolate}
+.v3 .L.band .bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.28;mix-blend-mode:luminosity}
+.v3 .L.band::before{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.08);z-index:-1}
+.v3 .L.band::after{content:"";position:absolute;left:-50px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06);z-index:-1}
+.v3 .band .Lt{padding:22px 22px 14px;gap:10px}
+.v3 .band .ico{font-size:40px;line-height:1;flex:none}
+.v3 .band .stat{flex:none;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.v3 .band .stat b{font:700 34px/1 Prompt,sans-serif;letter-spacing:-.02em}
+.v3 .band .stat span{font:500 13px/1.35 Prompt,sans-serif;opacity:.9}
+.v3 .band h3{color:#fff;font-size:19px;line-height:1.45;--tl:5}
+.v3 .band .tag{background:rgba(255,255,255,.18);color:#fff}
+.v3 .band .foot{color:rgba(255,255,255,.85)}
+.v3 .band .foot a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.v3 .band .like{border-color:rgba(255,255,255,.5);color:#fff}
+.v3 .band .like.on{background:#fff;border-color:#fff}
+@media (max-width:860px){.v3 .band h3{--tl:4}}
+
+/* ===== แถบซ้ายสีเต็มความสูง ===== */
+.v3 .L.band{position:relative;background:linear-gradient(160deg,var(--gA),var(--gB));color:#fff;border-right:0;overflow:hidden}
+.v3 .L.band::before{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;border-radius:50%;background:rgba(255,255,255,.08)}
+.v3 .L.band::after{content:"";position:absolute;left:-50px;bottom:-80px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.v3 .band .Lt{position:relative;z-index:1;padding:22px 22px 16px;gap:12px}
+.v3 .bh{display:flex;align-items:center;gap:12px;flex:none}
+.v3 .bh .ico{font-size:44px;line-height:1}
+.v3 .bh .stat{display:flex;flex-direction:column;font:500 12.5px/1.35 Prompt,sans-serif;opacity:.95;min-width:0}
+.v3 .bh .stat{overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.v3 .bh .stat b{display:block;font:700 30px/1.05 Prompt,sans-serif;letter-spacing:-.01em}
+.v3 .band h3{color:#fff;font:600 20px/1.45 Prompt,sans-serif;--tl:5}
+.v3 .band .tag{background:rgba(255,255,255,.18);color:#fff}
+.v3 .band .foot{color:rgba(255,255,255,.85)}
+.v3 .band .foot a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.v3 .band .like{border-color:rgba(255,255,255,.5);color:#fff}
+.v3 .band .like.on{color:#fff;border-color:#fff;background:rgba(255,255,255,.18)}
+.v3 .band .like.on svg{fill:#ff5c8a;stroke:#ff5c8a}
+.v3 .band :focus-visible{outline-color:#fff}
+@media (max-width:860px){.v3 .band h3{--tl:4}}
+.v3 .band h3.bt{font:600 21px/1.5 Prompt,sans-serif;--tl:6}
+.v3 .bt .ti{display:inline-block;font-size:1.5em;line-height:1;vertical-align:-.12em;margin-right:8px}
+.v3 .bt .num{font:700 1.9em/1 Prompt,sans-serif;letter-spacing:-.02em;vertical-align:-.08em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.15)}
 </style>
 </head>
 <body>
@@ -245,11 +286,12 @@ function latest(p){
 
 // ให้ทุกกล่องพอดี ไม่ต้องเลื่อน: ลดจำนวนบรรทัดสรุปจนปุ่มล่างสุดมองเห็น
 const ICON={"#Meeting":"🗓️","#Leadership":"🧭","#Collaboration":"🤝","#Focus":"🎯","#Wellbeing":"🌿","#AI-at-Work":"🤖","#Automation":"⚙️","#Prompting":"💬","#Decision":"⚖️","#Writing":"✍️","#Learning":"📚","#DataSkills":"📈","#Benchmark":"📊","#KM-Strategy":"🧩","#Lessons-Learned":"🔁","#CoP":"👥","#KnowledgeGraph":"🕸️","#RAG":"🔎","#AI-Agent":"🦾","#Digital-Expert":"🧠"};
+const titleH=s=>esc(s).replace(/(\d[\d,.]*\s?%?)/g,m=>/^(19|20)\d{2}$/.test(m.trim())?m:`<span class="num">${m}</span>`);
 const ico=n=>n.icon||ICON[(n.tags||[])[0]]||({WORLD:"🌎",FUTURE:"🚀",HACK:"💡"}[n.pillar]);
 function fit(c){
   if(!c.classList.contains("v3"))return;
   const mob=matchMedia("(max-width:860px)").matches;
-  const L=c.querySelector(".Lt"),h=c.querySelector("h3");let tl=3;h.style.setProperty("--tl",tl);
+  const L=c.querySelector(".Lt"),h=c.querySelector("h3");let tl=6;h.style.setProperty("--tl",tl);
   while(!mob&&tl>1&&L.scrollHeight>L.clientHeight+1)h.style.setProperty("--tl",--tl);
   const K=c.querySelector(".ktb");
   if(K&&!mob){const li=[...K.querySelectorAll("li")];li.forEach(x=>x.hidden=false);let k=li.length;while(k>1&&K.scrollHeight>K.clientHeight+1)li[--k].hidden=true}
@@ -263,14 +305,12 @@ function render(){
     const list=latest(p.dataset.p),track=p.querySelector(".track"),dots=p.querySelector(".dots"),bar=p.querySelector(".bar i");
     if(!list.length){track.innerHTML='<p class="empty">สัปดาห์นี้ยังไม่มีเรื่องที่ผ่านเกณฑ์ รอบหน้าจะอัปเดตให้อัตโนมัติ</p>';p.querySelectorAll(".nav").forEach(b=>b.disabled=true);return}
     track.innerHTML=list.map(n=>{const kt=(n.takeaways||[]).slice(0,5),st=n.stat;
-      const fb=`<div class="fb${st?"":" noStat"}"><span class="ico">${ico(n)}</span>${st?`<span class="big">${esc(st.value)}</span><span class="lbl">${esc(st.label)}</span>`:""}</div>`;
-      const media=n.image?`<img src="${esc(n.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.fb))" data-fb="${esc(fb)}">${st?`<span class="chip"><b>${esc(st.value)}</b>${esc(st.label)}</span>`:""}`:fb;
       return `<article class="card v3">
-      <div class="L"><div class="media">${media}</div>
-        <div class="Lt"><h3>${esc(n.title_th)}</h3>${tagsH(n)}
-          <div class="foot"><span class="d">${esc(n.src)}</span><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></div>
+      <div class="L band"><div class="Lt">
+        <h3 class="bt"><span class="ti">${ico(n)}</span>${titleH(n.title_th)}</h3>${tagsH(n)}
+        <div class="foot"><span class="d">${esc(n.src)}</span><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></div>
       <div class="R">${kt.length?`<div class="ktb"><h4>Key takeaways</h4><ul class="kt">${kt.map(k=>`<li>${esc(k)}</li>`).join("")}</ul></div>`:""}
-        <div class="smb"><h4>สรุปข่าว</h4><p class="sum">${esc(n.summary_th)}</p></div>
+        <div class="smb"><h4>สรุปเนื้อหา</h4><p class="sum">${esc(n.summary_th)}</p></div>
         <button class="more" data-uid="${esc(n.uid)}">See more</button></div></article>`}).join("");
     track.querySelectorAll(".card").forEach(fit);
     dots.innerHTML=list.map((_,i)=>`<button aria-label="เรื่องที่ ${i+1}"></button>`).join("");
@@ -296,7 +336,7 @@ const dlg=document.getElementById("dlg");
 function openItem(n){
   dlg.dataset.p=n.pillar;
   document.getElementById("dt").textContent=n.title_th;
-  document.getElementById("dbody").innerHTML=`${n.image?`<img class="dimg" src="${esc(n.image)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`:""}${tagsH(n)}${(n.takeaways||[]).length?`<h4>Key takeaways</h4><ul>${n.takeaways.slice(0,5).map(k=>`<li>${esc(k)}</li>`).join("")}</ul>`:""}<h4>สรุปข่าว</h4><p>${esc(n.summary_th)}</p><div class="foot">${srcH(n)}${likeH(n)}</div><a class="btn" href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>`;
+  document.getElementById("dbody").innerHTML=`${n.image?`<img class="dimg" src="${esc(n.image)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`:""}${tagsH(n)}${(n.takeaways||[]).length?`<h4>Key takeaways</h4><ul>${n.takeaways.slice(0,5).map(k=>`<li>${esc(k)}</li>`).join("")}</ul>`:""}<h4>สรุปเนื้อหา</h4><p>${esc(n.summary_th)}</p><div class="foot">${srcH(n)}${likeH(n)}</div><a class="btn" href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>`;
   dlg.open||dlg.showModal();
 }
 
