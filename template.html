@@ -237,6 +237,8 @@ footer .q{margin-top:6px;font:600 24px Caveat,cursive;letter-spacing:0;color:#2c
 .v3 .band{background-size:cover;background-position:center}
 .v3 .band.hasimg::before,.v3 .band.hasimg::after{display:none}
 .v3 .band.hasimg h3,.v3 .band.hasimg .foot{text-shadow:0 1px 8px rgba(0,0,0,.35)}
+.v3 .tbox{flex:0 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:10px;background:rgba(0,0,0,.38);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);border-radius:14px;padding:14px 16px}
+.v3 .band .tag{background:rgba(255,255,255,.2)}
 </style>
 </head>
 <body>
@@ -295,7 +297,7 @@ function fit(c){
   if(!c.classList.contains("v3"))return;
   const mob=matchMedia("(max-width:860px)").matches;
   const L=c.querySelector(".Lt"),h=c.querySelector("h3");let tl=6;h.style.setProperty("--tl",tl);
-  while(!mob&&tl>1&&L.scrollHeight>L.clientHeight+1)h.style.setProperty("--tl",--tl);
+  const tb=c.querySelector(".tbox");while(!mob&&tl>1&&(L.scrollHeight>L.clientHeight+1||(tb&&tb.scrollHeight>tb.clientHeight+1)))h.style.setProperty("--tl",--tl);
   const K=c.querySelector(".ktb");
   if(K&&!mob){const li=[...K.querySelectorAll("li")];li.forEach(x=>x.hidden=false);let k=li.length;while(k>1&&K.scrollHeight>K.clientHeight+1)li[--k].hidden=true}
   const S=c.querySelector(".smb"),s=S.querySelector(".sum");
@@ -310,7 +312,7 @@ function render(){
     track.innerHTML=list.map(n=>{const kt=(n.takeaways||[]).slice(0,5),st=n.stat;
       return `<article class="card v3">
       <div class="L band"${n.image?` data-img="${esc(n.image)}"`:""}><div class="Lt">
-        <h3 class="bt"><span class="ti">${ico(n)}</span>${titleH(n.title_th)}</h3>${tagsH(n)}
+        <div class="tbox"><h3 class="bt"><span class="ti">${ico(n)}</span>${titleH(n.title_th)}</h3>${tagsH(n)}</div>
         <div class="foot"><span class="d">${esc(n.src)}</span><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></div>
       <div class="R">${kt.length?`<div class="ktb"><h4>Key takeaways</h4><ul class="kt">${kt.map(k=>`<li>${esc(k)}</li>`).join("")}</ul></div>`:""}
         <div class="smb"><h4>สรุปเนื้อหา</h4><p class="sum">${esc(n.summary_th)}</p></div>
