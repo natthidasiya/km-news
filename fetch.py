@@ -37,11 +37,28 @@ def ask(pillar, seen):
     txt = txt[txt.find("["): txt.rfind("]") + 1]
     return json.loads(txt)
 
+def add(arch, items, week):
+    seen = {a["link"] for a in arch}; new = []
+    for it in items:
+        if not it.get("link") or it["link"] in seen: continue
+        seen.add(it["link"])
+        new.append({**it, "week": week, "uid": re.sub(r"\W+", "", it["link"])[-48:]})
+    return new
+
 def main():
     arch = json.loads(ARCH.read_text(encoding="utf-8")) if ARCH.exists() else []
     seen = [a["link"] for a in arch]
     week = dt.datetime.now(TZ).strftime("%Y-%m-%d")
     new = []
+    # โหมดฟรี: ไม่มี API key -> รับข่าวจาก data/new.json (ผลจากสกิล km-news-scout)
+    NEW = Path("data/new.json")
+    if not os.getenv("ANTHROPIC_API_KEY"):
+        if NEW.exists():
+            new = add(arch, json.loads(NEW.read_text(encoding="utf-8")), week)
+            NEW.unlink()
+        arch = new + arch
+        ARCH.write_text(json.dumps(arch, ensure_ascii=False, indent=1), encoding="utf-8")
+        build(arch); print(f"free mode: added {len(new)} / total {len(arch)}"); return
     for p in PILLARS:
         try:
             for it in ask(p, seen):
