@@ -160,6 +160,39 @@ footer .q{margin-top:6px;font:600 24px Caveat,cursive;letter-spacing:0;color:#2c
 @media (max-width:860px){.card{flex-direction:column;min-height:0}.vis{flex:none;min-height:150px}.vis .src{display:none}.panel{height:auto}}
 .sum[hidden]{display:none!important}
 .panel[data-p=HACK]{height:400px}
+
+/* ===== v3 layout: ซ้าย=ภาพ+หัวข้อ+ปุ่ม / ขวาบน=takeaways / ขวาล่าง=สรุป ===== */
+.panel{height:540px}.panel[data-p=HACK]{height:500px}
+.card.v3{display:grid;grid-template-columns:42% 58%;padding:0;gap:0;overflow:hidden;flex-direction:initial}
+.v3 .L{display:flex;flex-direction:column;min-height:0;overflow:hidden;border-right:1px solid var(--line)}
+.v3 .media{flex:0 0 46%;position:relative;overflow:hidden;background:linear-gradient(150deg,var(--gA),var(--gB));color:#fff}
+.v3 .media img{width:100%;height:100%;object-fit:cover;display:block}
+.v3 .media .fb{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:14px 20px;gap:2px}
+.v3 .media .fb .ico{font-size:34px;line-height:1}
+.v3 .media .fb .big{font:700 44px/1 Prompt,sans-serif;letter-spacing:-.02em}
+.v3 .media .fb .lbl{font:500 13.5px/1.4 Prompt,sans-serif;opacity:.92;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.v3 .media .fb.noStat .ico{font-size:64px}
+.v3 .chip{position:absolute;left:12px;bottom:12px;background:rgba(10,30,45,.72);backdrop-filter:blur(4px);color:#fff;border-radius:10px;padding:4px 10px;font:600 13px Prompt,sans-serif;max-width:calc(100% - 24px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v3 .chip b{font-size:16px;margin-right:6px}
+.v3 .Lt{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;padding:14px 18px 12px}
+.v3 h3{margin:0;font:600 18px/1.45 Prompt,sans-serif;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--tl,3);overflow:hidden;flex:none}
+.v3 .tags{flex:none}
+.v3 .foot{flex:none;margin-top:auto;display:flex;align-items:center;gap:12px;flex-wrap:nowrap;font-size:13px;color:var(--soft)}
+.v3 .foot .d{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v3 .foot a{white-space:nowrap;flex:none}
+.v3 .foot .like{margin-left:0;flex:none}
+.v3 .R{display:flex;flex-direction:column;min-height:0;overflow:hidden;padding:16px 20px 14px;gap:12px}
+.v3 .ktb{flex:0 1 auto;max-height:58%;min-height:0;overflow:hidden}
+.v3 .R h4{margin:0 0 6px;font:600 14px Prompt,sans-serif;color:var(--c)}
+.v3 .kt{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.v3 .kt li{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.5}
+.v3 .kt li::before{content:"✓";flex:none;width:20px;height:20px;border-radius:50%;background:var(--cbg);color:var(--c);font:700 12px/20px Prompt,sans-serif;text-align:center;margin-top:2px}
+.v3 .kt li[hidden]{display:none}
+.v3 .smb{flex:1 1 0;min-height:0;overflow:hidden;border-top:1px dashed var(--line);padding-top:10px}
+.v3 .smb .sum{margin:0;font-size:14.5px;color:var(--soft);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--clamp,4);overflow:hidden}
+.v3 .more{border:0;background:transparent;color:var(--c);font:600 13.5px Prompt,sans-serif;padding:0;cursor:pointer}
+.dimg{width:100%;max-height:240px;object-fit:cover;border-radius:12px;display:block}
+@media (max-width:860px){.panel,.panel[data-p=HACK]{height:auto}.card.v3{grid-template-columns:1fr}.v3 .L{border-right:0}.v3 .media{flex:none;height:180px}.v3 .ktb{max-height:none}.v3 .smb{flex:none}.v3 .smb .sum{--clamp:4!important}}
 </style>
 </head>
 <body>
@@ -214,11 +247,14 @@ function latest(p){
 const ICON={"#Meeting":"🗓️","#Leadership":"🧭","#Collaboration":"🤝","#Focus":"🎯","#Wellbeing":"🌿","#AI-at-Work":"🤖","#Automation":"⚙️","#Prompting":"💬","#Decision":"⚖️","#Writing":"✍️","#Learning":"📚","#DataSkills":"📈","#Benchmark":"📊","#KM-Strategy":"🧩","#Lessons-Learned":"🔁","#CoP":"👥","#KnowledgeGraph":"🕸️","#RAG":"🔎","#AI-Agent":"🦾","#Digital-Expert":"🧠"};
 const ico=n=>n.icon||ICON[(n.tags||[])[0]]||({WORLD:"🌎",FUTURE:"🚀",HACK:"💡"}[n.pillar]);
 function fit(c){
-  const b=c.querySelector(".body");if(!b)return;
-  const li=[...b.querySelectorAll(".kt li")];li.forEach(x=>x.hidden=false);let k=li.length;
-  while(k>1&&b.scrollHeight>b.clientHeight+1)li[--k].hidden=true;
-  const s=b.querySelector(".sum:not([hidden])");
-  if(s){const lh=parseFloat(getComputedStyle(s).lineHeight)||25;s.style.setProperty("--clamp",Math.max(2,Math.floor(b.clientHeight/lh)))}
+  if(!c.classList.contains("v3"))return;
+  const mob=matchMedia("(max-width:860px)").matches;
+  const L=c.querySelector(".Lt"),h=c.querySelector("h3");let tl=3;h.style.setProperty("--tl",tl);
+  while(!mob&&tl>1&&L.scrollHeight>L.clientHeight+1)h.style.setProperty("--tl",--tl);
+  const K=c.querySelector(".ktb");
+  if(K&&!mob){const li=[...K.querySelectorAll("li")];li.forEach(x=>x.hidden=false);let k=li.length;while(k>1&&K.scrollHeight>K.clientHeight+1)li[--k].hidden=true}
+  const S=c.querySelector(".smb"),s=S.querySelector(".sum");
+  if(!mob){const lh=parseFloat(getComputedStyle(s).lineHeight)||24,hh=S.querySelector("h4").offsetHeight+16;s.style.setProperty("--clamp",Math.max(1,Math.floor((S.clientHeight-hh)/lh)))}
 }
 
 function render(){
@@ -226,14 +262,16 @@ function render(){
   document.querySelectorAll(".panel").forEach(p=>{
     const list=latest(p.dataset.p),track=p.querySelector(".track"),dots=p.querySelector(".dots"),bar=p.querySelector(".bar i");
     if(!list.length){track.innerHTML='<p class="empty">สัปดาห์นี้ยังไม่มีเรื่องที่ผ่านเกณฑ์ รอบหน้าจะอัปเดตให้อัตโนมัติ</p>';p.querySelectorAll(".nav").forEach(b=>b.disabled=true);return}
-    track.innerHTML=list.map(n=>{const kt=(n.takeaways||[]).slice(0,4),st=n.stat;return `<article class="card">
-      <div class="vis${st?"":" noStat"}"><span class="ico">${ico(n)}</span>${st?`<span class="big">${esc(st.value)}</span><span class="lbl">${esc(st.label)}</span>`:""}<span class="src">${esc(n.src)}</span></div>
-      <div class="txt"><h3>${esc(n.title_th)}</h3>${tagsH(n)}
-      ${n.pillar==="HACK"
-        ?`<div class="body"><div class="colL"><div class="trystep"><span class="n">👉</span><div><b>ลองทำ</b><p>${esc(n.so_what)}</p></div></div><p class="sum" hidden>${esc(n.summary_th)}</p></div></div>`
-        :`<div class="body"><div class="colL colR">${kt.length?`<ul class="kt">${kt.map(k=>`<li><span>${esc(k)}</span></li>`).join("")}</ul>`:`<p class="sum">${esc(n.summary_th)}</p>`}</div></div>
-      <p class="so"><span class="sot"><b>ต่อยอด</b>${esc(n.so_what)}</span></p>`}
-      <div class="foot"><span>${esc(n.date||"")}</span><button class="more" data-uid="${esc(n.uid)}">See more</button><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></article>`}).join("");
+    track.innerHTML=list.map(n=>{const kt=(n.takeaways||[]).slice(0,5),st=n.stat;
+      const fb=`<div class="fb${st?"":" noStat"}"><span class="ico">${ico(n)}</span>${st?`<span class="big">${esc(st.value)}</span><span class="lbl">${esc(st.label)}</span>`:""}</div>`;
+      const media=n.image?`<img src="${esc(n.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.replaceWith(document.createRange().createContextualFragment(this.dataset.fb))" data-fb="${esc(fb)}">${st?`<span class="chip"><b>${esc(st.value)}</b>${esc(st.label)}</span>`:""}`:fb;
+      return `<article class="card v3">
+      <div class="L"><div class="media">${media}</div>
+        <div class="Lt"><h3>${esc(n.title_th)}</h3>${tagsH(n)}
+          <div class="foot"><span class="d">${esc(n.src)}</span><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></div>
+      <div class="R">${kt.length?`<div class="ktb"><h4>Key takeaways</h4><ul class="kt">${kt.map(k=>`<li>${esc(k)}</li>`).join("")}</ul></div>`:""}
+        <div class="smb"><h4>สรุปข่าว</h4><p class="sum">${esc(n.summary_th)}</p></div>
+        <button class="more" data-uid="${esc(n.uid)}">See more</button></div></article>`}).join("");
     track.querySelectorAll(".card").forEach(fit);
     dots.innerHTML=list.map((_,i)=>`<button aria-label="เรื่องที่ ${i+1}"></button>`).join("");
     const cnt=p.querySelector(".count"),idx=()=>Math.round(track.scrollLeft/track.clientWidth);
@@ -258,7 +296,7 @@ const dlg=document.getElementById("dlg");
 function openItem(n){
   dlg.dataset.p=n.pillar;
   document.getElementById("dt").textContent=n.title_th;
-  document.getElementById("dbody").innerHTML=`${n.stat?`<div class="trystep"><span class="n">${ico(n)}</span><div><b>${esc(n.stat.value)}</b><p>${esc(n.stat.label)}</p></div></div>`:""}${tagsH(n)}<p>${esc(n.summary_th)}</p>${(n.takeaways||[]).length?`<h4>Key takeaways</h4><ul>${n.takeaways.slice(0,5).map(k=>`<li>${esc(k)}</li>`).join("")}</ul>`:""}<p class="so"><b>${label(n.pillar)}</b>${esc(n.so_what)}</p><div class="foot">${srcH(n)}${likeH(n)}</div><a class="btn" href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>`;
+  document.getElementById("dbody").innerHTML=`${n.image?`<img class="dimg" src="${esc(n.image)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()">`:""}${tagsH(n)}${(n.takeaways||[]).length?`<h4>Key takeaways</h4><ul>${n.takeaways.slice(0,5).map(k=>`<li>${esc(k)}</li>`).join("")}</ul>`:""}<h4>สรุปข่าว</h4><p>${esc(n.summary_th)}</p><div class="foot">${srcH(n)}${likeH(n)}</div><a class="btn" href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>`;
   dlg.open||dlg.showModal();
 }
 
