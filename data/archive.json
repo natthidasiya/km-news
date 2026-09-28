@@ -13,7 +13,18 @@
   "src": "NECTEC สวทช.",
   "date": "2026-09-07",
   "week": "2026-09-28",
-  "uid": "pswwwnectecorthnewsnewsprnewsaireadiness2026html"
+  "uid": "pswwwnectecorthnewsnewsprnewsaireadiness2026html",
+  "takeaways": [
+   "องค์กรไทยใช้ AI แล้วราว 54% แต่ความพร้อมยังอยู่ระดับ Aware",
+   "ด้านธรรมาภิบาลอ่อนที่สุด ไม่ถึง 30%",
+   "เกือบ 9 ใน 10 ที่ใช้ AI ยังวัดผลลัพธ์ไม่ได้",
+   "ธนาคารเป็นกลุ่มเดียวที่ถึงระดับ Ready",
+   "ไม่ถึง 3% ผูกทักษะ AI เข้ากับ Competency พนักงาน"
+  ],
+  "stat": {
+   "value": "54%",
+   "label": "องค์กรไทยเริ่มใช้ AI แล้ว"
+  }
  },
  {
   "pillar": "HACK",
@@ -29,7 +40,11 @@
   "src": "MIT Sloan Management Review",
   "date": "2026-02-19",
   "week": "2026-09-28",
-  "uid": "rticleasksanyinwhatmakesalisteningtourmeaningful"
+  "uid": "rticleasksanyinwhatmakesalisteningtourmeaningful",
+  "stat": {
+   "value": "3",
+   "label": "ระดับของการฟังให้ลึก"
+  }
  },
  {
   "pillar": "HACK",
@@ -45,7 +60,11 @@
   "src": "Reworked / Atlassian",
   "date": "2024-07-01",
   "week": "2026-09-28",
-  "uid": "undmeetingsareunproductivehereswhatneedstochange"
+  "uid": "undmeetingsareunproductivehereswhatneedstochange",
+  "stat": {
+   "value": "93%",
+   "label": "ผู้บริหารเชื่อว่าทีมทำได้ในครึ่งเวลา"
+  }
  },
  {
   "pillar": "WORLD",
@@ -61,7 +80,17 @@
   "src": "APQC",
   "date": "2026-05-12",
   "week": "2026-09-28",
-  "uid": "ryresource2026kmprioritiestrendsexecutivesummary"
+  "uid": "ryresource2026kmprioritiestrendsexecutivesummary",
+  "takeaways": [
+   "การนำ AI มาใช้คือความสำคัญอันดับหนึ่งของทีม KM ปี 2026",
+   "AI เร่งงาน KM ได้ แต่ก็เผยจุดอ่อนเรื่องคุณภาพเนื้อหาและ governance",
+   "ควรเริ่มจากโดเมนความรู้ที่สำคัญต่อธุรกิจก่อน",
+   "การวัดคุณค่าทางธุรกิจของ KM ยังเป็นโจทย์ยาก"
+  ],
+  "stat": {
+   "value": "49%",
+   "label": "เลือก AI เป็นโจทย์อันดับ 1 ของ KM"
+  }
  },
  {
   "pillar": "WORLD",
@@ -77,7 +106,17 @@
   "src": "KMWorld / Lucidworks",
   "date": "2026-07-21",
   "week": "2026-09-28",
-  "uid": "buildingthefutureofenterpriseknowledgemanagement"
+  "uid": "buildingthefutureofenterpriseknowledgemanagement",
+  "takeaways": [
+   "KMWorld AI 100 ยกย่ององค์กรที่ใช้ AI กับงาน KM อย่างเป็นรูปธรรม",
+   "มีทั้งบริษัทเทคใหญ่ ที่ปรึกษาระดับโลก และผู้เชี่ยวชาญเฉพาะทาง",
+   "จุดร่วมคือฐานความรู้ที่เชื่อถือได้ ให้ทั้งคนและ agent ใช้",
+   "คุณภาพ AI ขึ้นกับคุณภาพความรู้เบื้องหลัง"
+  ],
+  "stat": {
+   "value": "100",
+   "label": "องค์กรผู้นำ AI ด้าน KM ปี 2026"
+  }
  },
  {
   "pillar": "WORLD",
@@ -92,7 +131,13 @@
   "src": "DMG Consulting",
   "date": "2026-01-19",
   "week": "2026-09-28",
-  "uid": "2026knowledgemanagementfortheaienabledenterprise"
+  "uid": "2026knowledgemanagementfortheaienabledenterprise",
+  "takeaways": [
+   "แพลตฟอร์ม KM เปลี่ยนจากคลังเอกสารเป็นระบบอัจฉริยะ",
+   "KM ป้อนความรู้ให้ทั้ง AI งานบริการลูกค้า และพนักงาน",
+   "ผู้ขาย CRM และ ERP เร่งเพิ่มความสามารถด้าน KM",
+   "KM กลายเป็นหน้าที่หลักของธุรกิจ"
+  ]
  },
  {
   "pillar": "FUTURE",
@@ -108,7 +153,18 @@
   "src": "Document360",
   "date": "2026-09-11",
   "week": "2026-09-28",
-  "uid": "httpsdocument360comblogknowledgemanagementtrends"
+  "uid": "httpsdocument360comblogknowledgemanagementtrends",
+  "takeaways": [
+   "KM กลายเป็นโครงสร้างพื้นฐานของ AI แล้ว",
+   "โครงการ AI ล้มเพราะความรู้ไม่พร้อม ไม่ใช่เพราะโมเดลอ่อน",
+   "Semantic layer และ knowledge graph กลายเป็นฐานของ AI agent",
+   "Agent ต้องมีแหล่งความจริงเดียวที่ตรวจที่มาได้",
+   "ตัวชี้วัด KM เปลี่ยนเป็นคุณภาพคำตอบของ AI และความสดใหม่"
+  ],
+  "stat": {
+   "value": "60%",
+   "label": "โครงการ AI เสี่ยงล้ม เพราะความรู้ไม่พร้อม"
+  }
  },
  {
   "pillar": "FUTURE",
@@ -124,7 +180,13 @@
   "src": "KMWorld",
   "date": "2026-09-09",
   "week": "2026-09-28",
-  "uid": "026TrendSettingProducts20265bVolume35Issue55dhtm"
+  "uid": "026TrendSettingProducts20265bVolume35Issue55dhtm",
+  "takeaways": [
+   "เวนเดอร์ KM เกือบทุกรายมุ่งทำความรู้ให้ AI ใช้ได้",
+   "ความรู้ที่กระจัดกระจายทำให้ AI ตอบผิดอย่างมั่นใจ",
+   "แหล่งความรู้เดียวที่มี governance ใช้ร่วมกันทั้งคนและ agent",
+   "MCP กำลังเป็นช่องทางมาตรฐานเชื่อม agent กับคลังความรู้"
+  ]
  },
  {
   "pillar": "HACK",
@@ -156,7 +218,11 @@
   "src": "Microsoft",
   "date": "2026-05-05",
   "week": "2026-09-28",
-  "uid": "firmsarerebuildingtheoperatingmodelfortheageofai"
+  "uid": "firmsarerebuildingtheoperatingmodelfortheageofai",
+  "stat": {
+   "value": "4",
+   "label": "บทบาทเมื่อทำงานร่วมกับ AI"
+  }
  },
  {
   "pillar": "HACK",
@@ -172,6 +238,10 @@
   "src": "Microsoft WorkLab",
   "date": "2026-05-13",
   "week": "2026-09-28",
-  "uid": "humanagencyandtheopportunityforeveryorganization"
+  "uid": "humanagencyandtheopportunityforeveryorganization",
+  "stat": {
+   "value": "49%",
+   "label": "ของการใช้ Copilot เป็นงานใช้ความคิด"
+  }
  }
 ]
