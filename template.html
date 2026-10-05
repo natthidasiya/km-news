@@ -101,7 +101,8 @@ dialog[open]{animation:rise .2s ease-out}
 .ai{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--c)}
 .ai h4{margin:0;font:600 15.5px/1.45 Prompt,sans-serif}
 .ai p{margin:0;font-size:14px;color:var(--soft);display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
-.ai .foot{font-size:12.5px}
+.ai .foot{font-size:12.5px;align-items:center}
+.ai .like{padding:2px 10px;min-height:28px}
 .ai .open{border:0;background:transparent;color:var(--c);font:600 13px Prompt,sans-serif;padding:0;cursor:pointer}
 .acount{font-size:13px;color:var(--soft)}
 /* footer bg */
@@ -356,7 +357,7 @@ function renderArc(){
   const dk=i=>i.date||i.week||"",lk=i=>shared?(counts[i.uid]||0):(mine[i.uid]?1:0);
   l.sort(F.sort==="old"?(a,b)=>dk(a).localeCompare(dk(b)):F.sort==="like"?(a,b)=>lk(b)-lk(a)||dk(b).localeCompare(dk(a)):(a,b)=>dk(b).localeCompare(dk(a)));
   document.getElementById("acount").textContent=`${l.length} เรื่อง`;
-  document.getElementById("alist").innerHTML=l.length?l.map(n=>`<article class="ai" data-p="${n.pillar}"><h4>${esc(n.title_th)}</h4>${tagsH(n)}<p>${esc(n.summary_th)}</p><div class="foot"><span>${esc(n.date||n.week)}</span><button class="open" data-uid="${esc(n.uid)}">อ่านสรุป</button><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a></div></article>`).join(""):'<p class="empty">ไม่พบเรื่องที่ตรงกับตัวกรองนี้ ลองเลือกหมวดอื่นหรือล้างแท็ก</p>';
+  document.getElementById("alist").innerHTML=l.length?l.map(n=>`<article class="ai" data-p="${n.pillar}"><h4>${esc(n.title_th)}</h4>${tagsH(n)}<p>${esc(n.summary_th)}</p><div class="foot"><span>${esc(n.date||n.week)}</span><button class="open" data-uid="${esc(n.uid)}">อ่านสรุป</button><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></article>`).join(""):'<p class="empty">ไม่พบเรื่องที่ตรงกับตัวกรองนี้ ลองเลือกหมวดอื่นหรือล้างแท็ก</p>';
 }
 function openArc(p="ALL",tag=null){F={p,tag,q:"",sort:F.sort||"new"};document.getElementById("asort").value=F.sort;document.getElementById("aq").value="";renderArc();arc.open||arc.showModal()}
 document.getElementById("aq").oninput=e=>{F.q=e.target.value;renderArc()};
@@ -382,7 +383,7 @@ addEventListener("resize",()=>document.querySelectorAll(".card").forEach(fit));
 document.fonts&&document.fonts.ready.then(()=>document.querySelectorAll(".card").forEach(fit));
 
 render();
-if(shared&&ITEMS.length){sb(`likes?select=uid,n&uid=in.(${ITEMS.slice(0,300).map(n=>n.uid).join(",")})`).then(r=>{r.forEach(x=>counts[x.uid]=x.n);render()}).catch(()=>{})}
+if(shared&&ITEMS.length){sb(`likes?select=uid,n&uid=in.(${ITEMS.slice(0,300).map(n=>n.uid).join(",")})`).then(r=>{r.forEach(x=>counts[x.uid]=x.n);render();if(arc.open)renderArc()}).catch(()=>{})}
 </script>
 </body>
 </html>
