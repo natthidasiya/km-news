@@ -1,4 +1,4 @@
-# KM News Digest — อัปเดตเองทุกจันทร์ 07:00
+# KM Next+ — อัปเดตเองทุกจันทร์ 07:00
 โครงสร้าง
 - fetch.py     Claude ค้นเว็บ อ่านข่าวจริง แปล+สรุปไทย ใส่ #แท็ก → สะสมใน data/archive.json → สร้าง docs/index.html
 - data/archive.json  คลังความรู้ทั้งหมด (ใช้แทน database — เก็บใน repo, มีประวัติทุกสัปดาห์)
