@@ -240,6 +240,11 @@ footer .q{margin-top:6px;font:600 24px Caveat,cursive;letter-spacing:0;color:#2c
 .v3 .band.hasimg h3,.v3 .band.hasimg .foot{text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .v3 .tbox{flex:0 1 auto;min-height:0;overflow:hidden;display:flex;flex-direction:column;gap:10px;background:rgba(0,0,0,.38);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);border-radius:14px;padding:14px 16px}
 .v3 .band .tag{background:rgba(255,255,255,.2)}
+.ecos{display:flex;gap:6px;flex-wrap:wrap}
+.eco{border:1px solid currentColor;background:transparent;color:var(--c);border-radius:999px;padding:1px 10px;font:500 12px Prompt,sans-serif;cursor:pointer;white-space:nowrap}
+.band .eco{color:#fff;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.12)}
+.eco:hover{text-decoration:underline}
+#aeco button{font-size:12.5px;padding:4px 12px}
 </style>
 </head>
 <body>
@@ -258,7 +263,7 @@ footer .q{margin-top:6px;font:600 24px Caveat,cursive;letter-spacing:0;color:#2c
 <dialog id="dlg"><div class="dh"><h3 id="dt"></h3><button class="x" aria-label="ปิด">✕</button></div><div class="db" id="dbody"></div></dialog>
 
 <dialog id="arc"><div class="dh"><h3>คลังความรู้</h3><button class="x" aria-label="ปิด">✕</button></div>
- <div class="af"><div class="tabs" id="atabs"></div><div class="arow"><input id="aq" type="search" placeholder="ค้นหาหัวข้อหรือเนื้อหา"><select id="asort" aria-label="เรียงลำดับ"><option value="new">ใหม่ → เก่า</option><option value="old">เก่า → ใหม่</option><option value="like">ถูกใจมากสุด</option></select></div><div class="chip-on" id="atag" hidden></div><span class="acount" id="acount"></span></div>
+ <div class="af"><div class="tabs" id="atabs"></div><div class="arow"><input id="aq" type="search" placeholder="ค้นหาหัวข้อหรือเนื้อหา"><select id="asort" aria-label="เรียงลำดับ"><option value="new">ใหม่ → เก่า</option><option value="old">เก่า → ใหม่</option><option value="like">ถูกใจมากสุด</option></select></div><div class="tabs" id="aeco"></div><div class="chip-on" id="atag" hidden></div><span class="acount" id="acount"></span></div>
  <div class="alist" id="alist"></div></dialog>
 
 <footer>KNOWLEDGE CREATES PEOPLE&nbsp;&nbsp;&nbsp;PEOPLE CREATE A BETTER TOMORROW</footer>
@@ -291,8 +296,10 @@ function latest(p){
   return cur}
 
 // ให้ทุกกล่องพอดี ไม่ต้องเลื่อน: ลดจำนวนบรรทัดสรุปจนปุ่มล่างสุดมองเห็น
-const ICON={"#Meeting":"🗓️","#Leadership":"🧭","#Collaboration":"🤝","#Focus":"🎯","#Wellbeing":"🌿","#AI-at-Work":"🤖","#Automation":"⚙️","#Prompting":"💬","#Decision":"⚖️","#Writing":"✍️","#Learning":"📚","#DataSkills":"📈","#Benchmark":"📊","#KM-Strategy":"🧩","#Lessons-Learned":"🔁","#CoP":"👥","#KnowledgeGraph":"🕸️","#RAG":"🔎","#AI-Agent":"🦾","#Digital-Expert":"🧠"};
+const ICON={"#Meeting":"🗓️","#Leadership":"🧭","#Collaboration":"🤝","#Focus":"🎯","#Wellbeing":"🌿","#AI-at-Work":"🤖","#Automation":"⚙️","#Prompting":"💬","#Decision":"⚖️","#Writing":"✍️","#Learning":"📚","#DataSkills":"📈","#Benchmark":"📊","#KM-Strategy":"🧩","#Lessons-Learned":"🔁","#CoP":"👥","#Knowledge-Transfer":"🔄","#Mentoring":"🧑‍🏫","#Storytelling":"📖","#Innovation":"💡","#Capture":"📥","#Curate":"🗂️","#Apply":"🛠️","#Renew":"♻️","#Business-Impact":"📈","#Learning-Culture":"🌱","#Engagement":"🙌","#KnowledgeGraph":"🕸️","#RAG":"🔎","#AI-Agent":"🦾","#Digital-Expert":"🧠"};
 const titleH=s=>esc(s).replace(/(\d[\d,.]*\s?%?)/g,m=>/^(19|20)\d{2}$/.test(m.trim())?m:`<span class="num">${m}</span>`);
+const ECO={CAP:"📈 Capability Development",SYS:"🔄 Knowledge System",ACT:"🚀 Knowledge in Action",DIG:"🤖 KM AI & Digital",CUL:"🌱 Learning Culture"};
+const ecoH=n=>(n.eco||[]).filter(e=>ECO[e]).map(e=>`<button class="eco" data-eco="${e}">${ECO[e]}</button>`).join("");
 const ico=n=>n.icon||ICON[(n.tags||[])[0]]||({WORLD:"🌎",FUTURE:"🚀",HACK:"💡"}[n.pillar]);
 function fit(c){
   if(!c.classList.contains("v3"))return;
@@ -313,7 +320,7 @@ function render(){
     track.innerHTML=list.map(n=>{const kt=(n.takeaways||[]).slice(0,5),st=n.stat;
       return `<article class="card v3">
       <div class="L band"${n.image?` data-img="${esc(n.image)}"`:""}><div class="Lt">
-        <div class="tbox"><h3 class="bt"><span class="ti">${ico(n)}</span>${titleH(n.title_th)}</h3>${tagsH(n)}</div>
+        <div class="tbox">${(n.eco||[]).length?`<div class="ecos">${ecoH(n)}</div>`:""}<h3 class="bt"><span class="ti">${ico(n)}</span>${titleH(n.title_th)}</h3>${tagsH(n)}</div>
         <div class="foot"><span class="d">${esc(n.src)}</span><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></div></div>
       <div class="R">${kt.length?`<div class="ktb"><h4>Key takeaways</h4><ul class="kt">${kt.map(k=>`<li>${esc(k)}</li>`).join("")}</ul></div>`:""}
         <div class="smb"><h4>สรุปเนื้อหา</h4><p class="sum">${esc(n.summary_th)}</p></div>
@@ -348,18 +355,19 @@ function openItem(n){
 }
 
 // คลัง
-const arc=document.getElementById("arc");let F={p:"ALL",tag:null,q:"",sort:"new"};
+const arc=document.getElementById("arc");let F={p:"ALL",tag:null,q:"",sort:"new",eco:null};
 function renderArc(){
   document.getElementById("atabs").innerHTML=Object.keys(NAME).map(k=>`<button data-tab="${k}" class="${F.p===k?"on":""}">${NAME[k]}</button>`).join("");
+  document.getElementById("aeco").innerHTML=`<button data-ecof="" class="${F.eco?"":"on"}">ทุก Ecosystem</button>`+Object.entries(ECO).map(([k,v])=>`<button data-ecof="${k}" class="${F.eco===k?"on":""}">${v}</button>`).join("");
   const at=document.getElementById("atag");at.hidden=!F.tag;at.innerHTML=F.tag?`แสดงเฉพาะ <button data-clear>${esc(F.tag)} ✕</button>`:"";
   const q=F.q.toLowerCase();
-  const l=ITEMS.filter(i=>(F.p==="ALL"||i.pillar===F.p)&&(!F.tag||(i.tags||[]).includes(F.tag))&&(!q||(i.title_th+i.summary_th+(i.tags||[]).join(" ")).toLowerCase().includes(q)));
+  const l=ITEMS.filter(i=>(F.p==="ALL"||i.pillar===F.p)&&(!F.tag||(i.tags||[]).includes(F.tag))&&(!F.eco||(i.eco||[]).includes(F.eco))&&(!q||(i.title_th+i.summary_th+(i.tags||[]).join(" ")).toLowerCase().includes(q)));
   const dk=i=>i.date||i.week||"",lk=i=>shared?(counts[i.uid]||0):(mine[i.uid]?1:0);
   l.sort(F.sort==="old"?(a,b)=>dk(a).localeCompare(dk(b)):F.sort==="like"?(a,b)=>lk(b)-lk(a)||dk(b).localeCompare(dk(a)):(a,b)=>dk(b).localeCompare(dk(a)));
   document.getElementById("acount").textContent=`${l.length} เรื่อง`;
-  document.getElementById("alist").innerHTML=l.length?l.map(n=>`<article class="ai" data-p="${n.pillar}"><h4>${esc(n.title_th)}</h4>${tagsH(n)}<p>${esc(n.summary_th)}</p><div class="foot"><span>${esc(n.date||n.week)}</span><button class="open" data-uid="${esc(n.uid)}">อ่านสรุป</button><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></article>`).join(""):'<p class="empty">ไม่พบเรื่องที่ตรงกับตัวกรองนี้ ลองเลือกหมวดอื่นหรือล้างแท็ก</p>';
+  document.getElementById("alist").innerHTML=l.length?l.map(n=>`<article class="ai" data-p="${n.pillar}">${(n.eco||[]).length?`<div class="ecos">${ecoH(n)}</div>`:""}<h4>${esc(n.title_th)}</h4>${tagsH(n)}<p>${esc(n.summary_th)}</p><div class="foot"><span>${esc(n.date||n.week)}</span><button class="open" data-uid="${esc(n.uid)}">อ่านสรุป</button><a href="${esc(n.link)}" target="_blank" rel="noopener">อ่านข่าวเต็ม</a>${likeH(n)}</div></article>`).join(""):'<p class="empty">ไม่พบเรื่องที่ตรงกับตัวกรองนี้ ลองเลือกหมวดอื่นหรือล้างแท็ก</p>';
 }
-function openArc(p="ALL",tag=null){F={p,tag,q:"",sort:F.sort||"new"};document.getElementById("asort").value=F.sort;document.getElementById("aq").value="";renderArc();arc.open||arc.showModal()}
+function openArc(p="ALL",tag=null,eco=null){F={p,tag,eco,q:"",sort:F.sort||"new"};document.getElementById("asort").value=F.sort;document.getElementById("aq").value="";renderArc();arc.open||arc.showModal()}
 document.getElementById("aq").oninput=e=>{F.q=e.target.value;renderArc()};
 document.getElementById("asort").onchange=e=>{F.sort=e.target.value;renderArc()};
 
@@ -367,6 +375,8 @@ document.addEventListener("click",async e=>{
   const t=e.target;
   const o=t.closest("[data-open]");if(o)return openArc(o.dataset.open);
   const tg=t.closest(".tag");if(tg){dlg.open&&dlg.close();return openArc("ALL",tg.dataset.tag)}
+  const ef=t.closest("[data-ecof]");if(ef){F.eco=ef.dataset.ecof||null;return renderArc()}
+  const ec=t.closest(".eco");if(ec){dlg.open&&dlg.close();return openArc("ALL",null,ec.dataset.eco)}
   const tab=t.closest("[data-tab]");if(tab){F.p=tab.dataset.tab;return renderArc()}
   if(t.closest("[data-clear]")){F.tag=null;return renderArc()}
   const m=t.closest(".more,.open");if(m)return openItem(byId[m.dataset.uid]);
