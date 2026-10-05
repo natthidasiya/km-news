@@ -375,7 +375,7 @@ document.addEventListener("click",async e=>{
   const uid=b.dataset.uid,on=!mine[uid];on?mine[uid]=1:delete mine[uid];store.set("km-liked",mine);
   document.querySelectorAll(`.like[data-uid="${CSS.escape(uid)}"]`).forEach(x=>{x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);const s=x.querySelector("span");if(s)s.textContent=Math.max(+s.textContent+(on?1:-1),0)});
   b.classList.remove("pop");void b.offsetWidth;if(on)b.classList.add("pop");
-  if(shared){try{const n=await sb("rpc/like_news",{p_uid:uid,p_delta:on?1:-1});counts[uid]=n;document.querySelectorAll(`.like[data-uid="${CSS.escape(uid)}"] span`).forEach(s=>s.textContent=n)}catch{}}
+  if(shared){try{const n=await sb("rpc/like_news",{p_uid:uid,p_delta:on?1:-1,p_title:(byId[uid]||{}).title_th||null});counts[uid]=n;document.querySelectorAll(`.like[data-uid="${CSS.escape(uid)}"] span`).forEach(s=>s.textContent=n)}catch{}}
 });
 document.addEventListener("visibilitychange",()=>document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("hold",document.hidden)));
 addEventListener("resize",()=>document.querySelectorAll(".card").forEach(fit));
