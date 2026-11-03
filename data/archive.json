@@ -1,5 +1,225 @@
 [
  {
+  "pillar": "WORLD",
+  "score": 88,
+  "title_th": "KM ที่โตเต็มที่ ให้ผล AI ราว 2 เท่า",
+  "summary_th": "IDC ร่วมกับ eGain สำรวจ 520 องค์กร พบว่าองค์กรที่จัดการความรู้ได้เป็นผู้ใหญ่ที่สุดได้ผลลัพธ์ทางธุรกิจจาก AI มากกว่าองค์กรที่ KM อ่อนที่สุดประมาณ 2 เท่า ปัจจัยร่วมของกลุ่มที่ทำได้ดีคือใช้แพลตฟอร์มความรู้ที่เป็นหนึ่งเดียว มีระบบดูแลเนื้อหาให้ทันสมัยอัตโนมัติ และมีเจ้าของความรู้ส่วนกลางที่ชัดเจน ผลคือ AI ตอบได้แม่นขึ้น ลดข้อมูลผิดพลาดและความเสี่ยงด้านการปฏิบัติตามกฎระเบียบ ข้อค้นพบนี้ตอกย้ำว่า AI จะไม่ช่วยอะไรมาก หากฐานความรู้ขององค์กรยังกระจัดกระจายและไม่มีใครรับผิดชอบ รายงานเผยแพร่โดยผู้ขายซอฟต์แวร์ จึงควรอ่านพร้อมระวังมุมมองเชิงการตลาด แต่เป็นหลักฐานเชิงตัวเลขที่ใช้เสนอผู้บริหารเรื่องการลงทุนใน KM ได้",
+  "takeaways": [
+   "KM ที่แข็งแรงเพิ่มผลลัพธ์จาก AI ราว 2 เท่า",
+   "ใช้แพลตฟอร์มความรู้เดียวกันทั้งองค์กร",
+   "ให้ระบบช่วยดูแลเนื้อหาให้ทันสมัย",
+   "กำหนดเจ้าของความรู้ส่วนกลางให้ชัด",
+   "รายงานจากผู้ขาย ควรอ่านอย่างระวัง"
+  ],
+  "stat": {
+   "value": "2 เท่า",
+   "label": "ผลลัพธ์ AI ของ KM โตเต็มที่ เทียบกลุ่มอ่อนสุด"
+  },
+  "eco": [
+   "CAP",
+   "SYS"
+  ],
+  "tags": [
+   "#Benchmark",
+   "#Business-Impact"
+  ],
+  "link": "https://rallies.ai/news/egain-idc-study-finds-mature-knowledge-management-roughly-doubles-ai-business-impact-a674083880edd4e0",
+  "src": "eGain / IDC",
+  "date": "2026-10-28",
+  "week": "2026-11-03",
+  "uid": "ntroughlydoublesaibusinessimpacta674083880edd4e0",
+  "image": "https://rallies.ai/news/egain-idc-study-finds-mature-knowledge-management-roughly-doubles-ai-business-impact-a674083880edd4e0/opengraph-image?3481955f72603faa"
+ },
+ {
+  "pillar": "WORLD",
+  "score": 78,
+  "title_th": "เมื่อใช้ AI แทนเพื่อนร่วมงาน ทีมเริ่มหลวม",
+  "summary_th": "งานวิจัยที่ HBR นำเสนอ สำรวจพนักงานสหรัฐกว่า 1,000 คน พบว่าคนที่หันไปถาม AI แทนการคุยกับเพื่อนร่วมงานมักไว้ใจกันน้อยลงและประสานงานแย่ลง นักวิจัยเรียกปรากฏการณ์นี้ว่า relationslipping คือความสัมพันธ์ในทีมค่อยๆ หลุดไปทีละนิด ประเด็นสำคัญสำหรับ KM คือการรู้ว่าใครเชี่ยวชาญเรื่องอะไรในองค์กร ซึ่งต้องอาศัยการพูดคุยกันจริงเพื่ออัปเดตอยู่เสมอ เมื่อทุกคนไปพึ่ง AI แผนที่ความรู้ในหัวทีมก็เก่าลง การส่งเสริมชุมชนนักปฏิบัติและการแลกเปลี่ยนระหว่างคนจึงยังจำเป็น แม้จะมีเครื่องมือ AI ครบมือแล้ว",
+  "takeaways": [
+   "ถาม AI แทนเพื่อน ทำให้ความไว้ใจลดลง",
+   "relationslipping คือความสัมพันธ์ทีมหลุดทีละน้อย",
+   "การรู้ว่าใครรู้อะไรต้องอัปเดตผ่านการคุย",
+   "CoP และการแลกเปลี่ยนระหว่างคนยังสำคัญ"
+  ],
+  "stat": {
+   "value": "1,000+",
+   "label": "พนักงานสหรัฐที่ร่วมแบบสำรวจ"
+  },
+  "eco": [
+   "CUL"
+  ],
+  "tags": [
+   "#CoP",
+   "#Collaboration"
+  ],
+  "link": "https://hbr.org/2026/10/how-ai-erodes-teamwork",
+  "src": "Harvard Business Review",
+  "date": "2026-10-20",
+  "week": "2026-11-03",
+  "uid": "httpshbrorg202610howaierodesteamwork",
+  "image": "https://hbr.org/resources/images/article_assets/2025/10/Newsletter_TheInsider_feature.png"
+ },
+ {
+  "pillar": "WORLD",
+  "score": 70,
+  "title_th": "กู้ความรู้ USAID: Knowledge Rescue",
+  "summary_th": "จดหมายข่าว Empower Monthly ฉบับตุลาคม รวบรวมความเคลื่อนไหวของชุมชน KM สายงานพัฒนา เช่น โครงการ USAID Knowledge Rescue ที่ปล่อยเอกสารชุดแรกที่กู้ได้เข้าสู่ Development Knowledge Commons เพื่อไม่ให้ความรู้จากโครงการพัฒนาสูญหาย นอกจากนี้ยังเล่างานของ Plan International ภูมิภาคแอฟริกาตะวันตกและกลาง ที่ผลิตสรุปประเด็น เอกสารถอดบทเรียน และแฟคท์ชีตด้านการศึกษา เศรษฐกิจเยาวชน และสันติภาพ ตลอด 5 ปี รวมถึงเครื่องมือ AI ใหม่และหลักสูตร CKM ฉบับภาษาอาหรับ ภาพรวมชี้ว่า การถอดบทเรียนและเก็บความรู้ก่อนสูญหายเป็นงานเร่งด่วนเมื่อโครงการหรือทีมถูกยุบ",
+  "takeaways": [
+   "USAID Knowledge Rescue เปิดคลังเอกสารที่กู้ได้ชุดแรก",
+   "ความรู้ควรถูกเก็บก่อนโครงการหรือทีมจบ",
+   "Plan International ถอดบทเรียนเป็นเอกสารใช้ซ้ำต่อเนื่อง",
+   "ชุมชน KM แลกเปลี่ยนเครื่องมือและหลักสูตรร่วมกัน"
+  ],
+  "eco": [
+   "SYS",
+   "CUL"
+  ],
+  "tags": [
+   "#Knowledge-Transfer",
+   "#Capture"
+  ],
+  "link": "https://empowerkmcommunity.substack.com/p/empower-monthly-ff4",
+  "src": "Empower KM Community",
+  "date": "2026-10-27",
+  "week": "2026-11-03",
+  "uid": "sempowerkmcommunitysubstackcompempowermonthlyff4",
+  "image": ""
+ },
+ {
+  "pillar": "FUTURE",
+  "score": 90,
+  "title_th": "Agent ต้องการบริบท: KM คือชั้นกำหนดเส้นทาง",
+  "summary_th": "บทความจาก Unisys ชี้ว่า KM กำลังย้ายเข้าไปเป็นส่วนหนึ่งของสถาปัตยกรรมปฏิบัติการด้วย AI เพราะ agent ต้องมีบริบทพอ เช่น ผู้ใช้ บทบาท พื้นที่ และกระบวนการ จึงจะรู้ว่าข้อมูลไหนใช้ได้ แนวทางคือจับงานที่เกิดขึ้นจริงจากแชต เสียง และขั้นตอน แล้วสร้างความรู้อัตโนมัติ เดินจาก capture ไป advise และ automate เมื่อพิสูจน์ความมั่นใจแล้ว ใช้คำถามที่ตอบไม่ได้เป็น backlog ปรับปรุงข้อมูล และส่งคำถามง่ายไปโมเดลเล็กเพื่อลดต้นทุน ตัวอย่างหนึ่งมีบทความราว 50,000 ชิ้น และแก้คำขอได้ราว 35% ในช่วง 30 วันแรก โดยยังต้องมีการกำกับดูแลสิทธิ์และความเป็นส่วนตัว",
+  "takeaways": [
+   "agent ต้องมีบริบทจึงเลือกความรู้ถูก",
+   "จับความรู้จากงานจริงแล้วสร้างอัตโนมัติ",
+   "เริ่มจาก advise ก่อน automate เมื่อมั่นใจพอ",
+   "ใช้คำถามที่ตอบไม่ได้เป็น backlog แก้ข้อมูล",
+   "ต้องคุมสิทธิ์เข้าถึงและความเป็นส่วนตัว"
+  ],
+  "stat": {
+   "value": "35%",
+   "label": "คำขอที่แก้ได้ใน 30 วันแรก"
+  },
+  "eco": [
+   "DIG",
+   "SYS"
+  ],
+  "tags": [
+   "#AI-Agent",
+   "#Capture"
+  ],
+  "link": "https://www.biztechreports.com/news-archive/2026/10/30/agentic-ai-pushes-knowledge-management-into-enterprise-operations-unisys-october-30-2026",
+  "src": "BizTechReports",
+  "date": "2026-10-30",
+  "week": "2026-11-03",
+  "uid": "ementintoenterpriseoperationsunisysoctober302026",
+  "image": "http://static1.squarespace.com/static/59f9e1d780bd5ed5ad860581/59f9fe816c319480cf2cdad8/6ae4f6ba80859173606abf6a/1793390845389/Corporate+Webinar+Portrait+with+Teal+Branding.png?format=1500w"
+ },
+ {
+  "pillar": "FUTURE",
+  "score": 82,
+  "title_th": "Docebo เปิดตัว AI Agents เชื่อมการเรียนรู้",
+  "summary_th": "Docebo เปิดตัว Docebo Knowledge ชั้นค้นหาที่ครอบคลุมเนื้อหาอบรมและแหล่งความรู้ของบริษัท เช่น SharePoint, Confluence, Google Drive และ Slack โดยสืบทอดสิทธิ์การเข้าถึงจากต้นทาง พร้อม agent สำเร็จรูป 4 ตัว ได้แก่ ผู้ช่วยสร้างคอร์สจากไฟล์ ติวเตอร์ตอบคำถามผู้เรียน ตัวทบทวนแบบ spaced practice และตลาดค้นหาเนื้อหาภายนอก ยังเชื่อมกับ Copilot, ChatGPT และ Claude ผ่าน MCP ผู้ดูแลกำหนดสิทธิ์ ขั้นอนุมัติโดยคน และบันทึกกิจกรรมได้ บริษัทรายงานว่า Tutor Agent ตอบคำถามหน้างานได้ 25% และผู้ดูแลประหยัดเวลาราว 5 ชั่วโมงต่อเดือน (ตัวเลขจากบริษัท ยังไม่ได้ยืนยัน)",
+  "takeaways": [
+   "ค้นหาข้ามแหล่งความรู้โดยคงสิทธิ์เดิม",
+   "agent 4 แบบครอบคลุมสร้างคอร์สถึงทบทวน",
+   "เชื่อมเครื่องมือ AI อื่นผ่าน MCP",
+   "ต้องมีขั้นอนุมัติและบันทึกกิจกรรม",
+   "ตัวเลขผลลัพธ์มาจากบริษัทเอง"
+  ],
+  "stat": {
+   "value": "25%",
+   "label": "คำถามหน้างานที่ Tutor Agent ตอบได้"
+  },
+  "image": "https://hrtechedge.com/wp-content/uploads/2026/10/7-14.jpg",
+  "eco": [
+   "DIG",
+   "CUL"
+  ],
+  "tags": [
+   "#AI-Agent",
+   "#Learning"
+  ],
+  "link": "https://hrtechedge.com/hcm/docebo-launches-ai-agents-to-connect-learning-and-skills/",
+  "src": "HR Tech Edge",
+  "date": "2026-10-29",
+  "week": "2026-11-03",
+  "uid": "docebolaunchesaiagentstoconnectlearningandskills"
+ },
+ {
+  "pillar": "FUTURE",
+  "score": 72,
+  "title_th": "IBM คุม AI agent ด้วย Gateway และ Catalog",
+  "summary_th": "ในงาน TechXchange 2026 IBM ประกาศความสามารถใหม่ของ watsonx Orchestrate เพื่อบริหารจัดการ agent ระดับองค์กร ได้แก่ AI Gateway สำหรับค้นหาและควบคุม agent โมเดล และ MCP server ของบุคคลที่สาม แคตตาล็อกที่อนุมัติแล้วพร้อมข้อมูลประเมิน ความเสี่ยง และการปฏิบัติตามกฎ รวมถึง Trace Inspector ดูขั้นตอนการทำงานของ agent ทีละขั้น และ AgentOps Agent ช่วยวินิจฉัยข้อผิดพลาด ด้านความปลอดภัยมี Agent Identity ร่วมกับ HashiCorp Vault และเชื่อม Microsoft Entra ได้ สำหรับทีม KM ประเด็นคือ agent ที่ใช้ความรู้องค์กรต้องมีตัวตน สิทธิ์ และการตรวจสอบย้อนหลัง",
+  "takeaways": [
+   "agent ต้องมีแคตตาล็อกที่อนุมัติแล้วให้ทีมใช้ซ้ำ",
+   "ดูขั้นตอนการทำงานของ agent ย้อนหลังได้",
+   "agent มี identity และสิทธิ์เหมือนพนักงาน",
+   "ประเมินคุณภาพด้วยเกณฑ์ภาษาธรรมชาติ"
+  ],
+  "image": "https://www.ibm.com/content/dam/worldwide-content/cdp/int/ul/image/ibm-produced/2026-oct/IBM_watsonx_orchestrate_txc_blog_header.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg",
+  "eco": [
+   "DIG"
+  ],
+  "tags": [
+   "#AI-Agent"
+  ],
+  "link": "https://www.ibm.com/new/announcements/ibm-watsonx-orchestrate-advances-enterprise-ai-agent-management-with-new-capabilities-at-techxchange-2026",
+  "src": "IBM",
+  "date": "2026-10-27",
+  "week": "2026-11-03",
+  "uid": "ntmanagementwithnewcapabilitiesattechxchange2026"
+ },
+ {
+  "pillar": "HACK",
+  "score": 75,
+  "title_th": "มอบหมายงานอย่างไรให้ทีมโตและเราว่าง",
+  "summary_th": "HBR รวม 10 เคล็ดลับการมอบหมายงานที่ผู้จัดการนิยมที่สุด หัวข้อหลักคือการให้อำนาจผู้รับงานตอนส่งต่อ และใช้การมอบหมายเพื่อเอาเวลากลับมาทำเรื่องเชิงกลยุทธ์ หน้าบทความที่เปิดอ่านได้แสดงเพียงสรุปภาพรวม ไม่เห็นรายละเอียดรายข้อ จึงสรุปได้เท่านี้ แนวคิดที่นำไปใช้ได้ทันทีคือ ก่อนส่งต่อ ให้ระบุผลลัพธ์ที่ต้องการและขอบเขตการตัดสินใจ ไม่ใช่สั่งวิธีทำทีละขั้น แล้วใช้เวลาที่ได้คืนมาไปทำงานที่มีผลมากที่สุด",
+  "takeaways": [
+   "มอบหมายเพื่อสร้างอำนาจให้ผู้รับงาน",
+   "ใช้เวลาที่ได้คืนทำงานเชิงกลยุทธ์",
+   "ระบุผลลัพธ์และขอบเขตการตัดสินใจ"
+  ],
+  "image": "https://hbr.org/resources/images/article_assets/2026/10/Oct26_22_1320250026.jpg",
+  "eco": [
+   "CUL"
+  ],
+  "tags": [
+   "#Leadership",
+   "#Collaboration"
+  ],
+  "link": "https://hbr.org/2026/10/our-favorite-management-tips-on-delegating",
+  "src": "Harvard Business Review",
+  "date": "2026-10-22",
+  "week": "2026-11-03",
+  "uid": "brorg202610ourfavoritemanagementtipsondelegating"
+ },
+ {
+  "pillar": "HACK",
+  "score": 70,
+  "title_th": "เปลี่ยนต้นแบบ vibe-code เป็นเครื่องมือจริง",
+  "summary_th": "HBR แนะนำวิธีเปลี่ยนต้นแบบที่พนักงานสร้างด้วยการ vibe-coding ให้เป็นเครื่องมือที่บริษัทใช้งานได้จริง มี 3 ข้อหลัก ข้อแรกดึงผู้เชี่ยวชาญด้านเทคนิคเข้ามาตั้งแต่ต้น แม้เขาไม่ได้เป็นคนสร้างก็ตาม ข้อสองจำกัดการเชื่อมต่อของเครื่องมือกับระบบอื่นเพื่อลดความเสี่ยง ข้อสามอย่ารีบขยายเครื่องมือที่ประสบความสำเร็จไปยังผู้ใช้หรือกรณีใช้งานมากขึ้นเร็วเกินไป เหมาะกับทีมที่เริ่มมีคนทำเครื่องมือเล็กๆ ใช้เองและอยากให้ใช้ได้อย่างปลอดภัย",
+  "takeaways": [
+   "ดึงผู้เชี่ยวชาญเทคนิคเข้ามาตั้งแต่ต้น",
+   "จำกัดการเชื่อมต่อกับระบบอื่น",
+   "อย่าขยายเครื่องมือเร็วเกินไป"
+  ],
+  "image": "https://hbr.org/resources/images/article_assets/2026/10/Oct26_16_AnaMoreno.jpg",
+  "eco": [
+   "DIG"
+  ],
+  "tags": [
+   "#AI-at-Work",
+   "#Automation"
+  ],
+  "link": "https://hbr.org/2026/10/turn-vibe-coded-prototypes-into-tools-your-company-can-actually-use",
+  "src": "Harvard Business Review",
+  "date": "2026-10-16",
+  "week": "2026-11-03",
+  "uid": "odedprototypesintotoolsyourcompanycanactuallyuse"
+ },
+ {
   "pillar": "FUTURE",
   "title_th": "82% มั่นใจคุม AI Agent แต่รับมือ Agent ชนกันแค่ 26%",
   "summary_th": "รายงานของ OutSystems ร่วมกับ CIO Dive และ KPMG สำรวจผู้ตัดสินใจด้านไอทีกว่า 850 คน พบว่า 82% เชื่อว่าองค์กรตามทันเรื่องการกำกับดูแล เชื่อมต่อ และติดตาม AI Agent แต่มีเพียง 26% ที่พร้อมแก้ความขัดแย้งระหว่าง Agent ด้วยกัน ช่องว่างจึงห่างถึง 56 จุด องค์กรส่วนใหญ่ (83%) ยังพึ่งกระบวนการไอที ความปลอดภัย หรือคอมพลายแอนซ์เดิม และมีเพียง 5% ที่มีระบบควบคุมอัตโนมัติ ร่องรอยการตรวจสอบ และการทบทวนโดยคนครบ อุปสรรคสำคัญของการประสานงานหลาย Agent คือความสอดคล้องของข้อมูลและการแชร์บริบท (35%) ผลลัพธ์ที่เห็นชัดที่สุดคือลดข้อผิดพลาด (64%) ส่วนการเร่งเปิดตัวผลิตภัณฑ์มีเพียง 12% ข้อมูลจากสิงคโปร์ยังชี้ว่า 82% เคยต้องถอยหรือปิด Agent ที่ใช้งาน ควรอ่านอย่างระวัง เพราะเป็นงานวิจัยที่ผู้ขายแพลตฟอร์มเป็นผู้สนับสนุน",
